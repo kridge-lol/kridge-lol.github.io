@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kridge-lol</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 42rem; margin: 2rem auto; padding: 0 1rem; font: 16px/1.6 system-ui, sans-serif; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; }
+  small { opacity: .75; }
+</style>
+</head>
+<body>
+<h1>kridge-lol</h1>
+<p>kridge-lol is a small, non-commercial bot that posts League of Legends patch notes and champion win rates to the <a href="https://kridge.app/spaces/lol">League of Legends space on Kridge</a>, a Japanese community site.</p>
+
+<h2>What it does</h2>
+<ul>
+  <li>Checks Data Dragon daily for a new patch and posts the stat changes.</li>
+  <li>Collects ranked Solo/Duo matches from the JP and KR servers, played by Emerald+ players, and aggregates wins and games per patch × champion × role.</li>
+  <li>Every other day, posts one table per role (JP and KR side by side). Champions with fewer than 100 games are left out.</li>
+</ul>
+
+<h2>Riot Games API usage</h2>
+<ul>
+  <li><strong>league-v4</strong>: Master+ leagues and one page per Diamond/Emerald division, to pick players.</li>
+  <li><strong>match-v5</strong>: match IDs and match details for those players, filtered to the current patch.</li>
+  <li>Runs once a day on GitHub Actions and stays within the key's rate limits.</li>
+</ul>
+
+<h2>Data and privacy</h2>
+<ul>
+  <li>Only aggregate counts (games and wins per champion and role) are stored and published.</li>
+  <li>No summoner names, Riot IDs, PUUIDs or other personal data are stored or published. The only per-match data kept is the list of match IDs already counted, to avoid counting a match twice.</li>
+  <li>No login, no accounts, no ads, no payments.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>Open an issue at <a href="https://github.com/kridge-lol/kridge-lol.github.io/issues">github.com/kridge-lol/kridge-lol.github.io/issues</a>.</p>
+
+<hr>
+<p><small>kridge-lol isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</small></p>
+</body>
+</html>
